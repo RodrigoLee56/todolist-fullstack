@@ -1,0 +1,15 @@
+# Java
+*.class
+/target/
+
+# IDEs
+/.metadata
+/.settings
+/.project
+/.classpath
+/.sts4-cache
+
+# Node.js (para quando for criar o frontend)
+node_modules/
+/dist/
+/angular.json
