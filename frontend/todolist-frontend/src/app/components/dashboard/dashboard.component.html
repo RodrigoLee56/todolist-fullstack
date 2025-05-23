@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <h2>My Tasks</h2>
+
+  <button class="btn btn-primary mb-3" (click)="toggleTaskForm()">
+    {{ showTaskForm ? 'Cancel' : 'Add New Task' }}
+  </button>
+
+  <app-task-form *ngIf="showTaskForm" (taskAdded)="loadTasks()"></app-task-form>
+
+  <app-task-list [tasks]="tasks" (taskUpdated)="loadTasks()"></app-task-list>
+</div>
