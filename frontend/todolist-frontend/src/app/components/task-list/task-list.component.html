@@ -1,1 +1,15 @@
-<p>task-list works!</p>
+<div class="task-list-container">
+  <h2>Minhas Tarefas</h2>
+  <button (click)="createTask()" class="btn btn-primary">Nova Tarefa</button>
+
+  <div *ngIf="loading">Carregando tarefas...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <ul *ngIf="tasks.length && !loading">
+    <li *ngFor="let task of tasks" class="task-item">
+      <span>{{ task.title }}</span>
+      <button (click)="editTask(task)" class="btn btn-sm btn-warning">Editar</button>
+      <button (click)="deleteTask(task)" class="btn btn-sm btn-danger">Excluir</button>
+    </li>
+  </ul>
+  <div *ngIf="!tasks.length && !loading">Nenhuma tarefa encontrada.</div>
+</div>
